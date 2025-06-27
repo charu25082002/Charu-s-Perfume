@@ -1,0 +1,177 @@
+/* 🌸 Overall page layout */
+.amazon-style-home {
+  background: linear-gradient(to bottom, #fff9fb, #f4ecff);
+  padding-top: 100px;
+  padding-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 🎞️ Fullscreen image holder (can be used later for banners) */
+.fullscreen-images {
+  height: 600px;
+  background: url('https://www.jananfragrances.com/cdn/shop/files/Desktop_Banner_0d4fe6e8-40bf-4d5a-9b64-f99611387592.png?v=1746533019&width=1920') no-repeat center center;
+  background-size: cover;
+  border-radius: 12px;
+  margin: 20px auto;
+  margin-top: -50px;
+  max-width: 95%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 🖼️ Slider section */
+.perfume-slider-wrapper {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.slider-title {
+  font-size: 24px;
+  color: #6b357d;
+  margin-bottom: 16px;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+}
+
+.slider img {
+  height: 220px;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.slider img:hover {
+  transform: scale(1.05);
+}
+
+.slider-btn {
+  background: linear-gradient(to right, #cc66ff, #ff66cc);
+  border: none;
+  color: white;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background 0.3s ease;
+}
+
+.slider-btn:hover {
+  background: linear-gradient(to right, #ff66cc, #cc66ff);
+}
+
+/* 🪷 Category Cards */
+.category-card {
+  margin: 30px auto;
+  padding: 24px;
+  border-radius: 16px;
+  max-width: 95%;
+  box-shadow: 0 5px 10px rgba(150, 100, 200, 0.1);
+}
+
+.gradient-bg {
+  background: linear-gradient(to right, #fde0ff, #e6d4ff);
+}
+
+.category-title {
+  font-size: 22px;
+  color: #5a2e75;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* 🛍️ Product Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-item {
+  background: white;
+  padding: 12px;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.product-item img {
+  width: 100%;
+  border-radius: 12px;
+  height: auto;
+}
+
+.product-item p {
+  margin-top: 10px;
+  font-weight: 500;
+  color: #6a1b75;
+}
+
+/* 🔗 Category button */
+.category-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: #7a4e9b;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.category-link:hover {
+  background-color: #f5d1ff;
+  color: #5a2e75;
+}
+/* slide show */
+
+/* 🎞️ Fullscreen Slider Wrapper */
+.fullscreen-slider {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: -50px;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 📽️ Slider Track */
+.fullscreen-slider-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+/* 🖼️ Each Slide */
+.fullscreen-slide {
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
+}

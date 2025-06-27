@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  background: url("https://fragrancelounge.com/cdn/shop/files/DavidOffCoolWaterMen_Women_fe71bdb3-3a48-45c6-a412-4b26dbea6331.jpg?v=1720247613&width=1946") no-repeat center center/cover;
+  /* overflow: hidden; */
+ 
+  
+}
+
+/* 🔵 Background blur overlay */
+/* .contact-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 0;
+} */
+
+/* 💠 Glass-style contact card */
+.contact-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+ 
+}
+
+.contact-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.contact-card h2 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+/* 📝 Form Fields */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-family: inherit;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* 🎯 Button */
+.contact-form button {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #000;
+}

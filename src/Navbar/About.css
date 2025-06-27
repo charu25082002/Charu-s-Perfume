@@ -1,0 +1,203 @@
+/* Layout */
+.about-card-container {
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fffefc;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #b71c1c;
+  margin-bottom: 30px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+/* Flip Card Structure */
+.flip-card {
+  background: transparent;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #880e4f;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.read-btn {
+  background: white;
+  color: #880e4f;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.read-btn:hover {
+  background: #ffcdd2;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 0, 30, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  max-width: 400px;
+  width: 90%;
+  border-radius: 16px;
+  text-align: left;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+  color: #b71c1c;
+}
+
+.close-btn {
+  background: #b71c1c;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.intro-text, .section-text {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+}
+
+.section-heading {
+  margin-top: 50px;
+  font-size: 2rem;
+  color: #880e4f;
+  margin-left: -100px;
+}
+.features-list {
+  list-style: none;
+  margin-top: 30px;
+  margin-left: 10px;
+  padding: 0;
+}
+
+.features-list li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.quote-section {
+  margin-top: 50px;
+  background-color: #fff0f4;
+  padding: 30px;
+  font-style: italic;
+  color: #880e4f;
+  border-left: 5px solid #f8bbd0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flip-card-back {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.flip-card-back::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* dark overlay for readability */
+  z-index: 1;
+}
+
+.flip-card-back h3,
+.flip-card-back .read-btn {
+  position: relative;
+  z-index: 2;
+}
+
+.read-btn {
+  margin-top: 15px;
+  background: #fff;
+  color: #880e4f;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 22px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.read-btn:hover {
+  background-color: #ffcdd2;
+}

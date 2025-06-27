@@ -1,0 +1,768 @@
+/* 🔝 Container for search + icons */
+.search-bar-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #f4f4f4;
+  z-index: 1001;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  flex-wrap: wrap;
+}
+
+/* 🔍 Search container */
+.search-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  padding: 8px 12px;
+  font-size: 16px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+}
+
+.search-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #555;
+}
+
+/* 🛒 ❤️ Icons */
+.icons-container {
+  display: flex;
+  gap: 20px;
+}
+
+.icon-link {
+  font-size: 22px;
+  text-decoration: none;
+  color: #333;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.icon-link:hover {
+  background-color: #ddd;
+  transform: scale(1.1);
+}
+
+.icon-like {
+  margin-top: 8px;
+}
+.icon {
+  margin-top: 8px;
+}
+
+/* Navbar */
+.nav {
+  position: fixed;
+  top: 60px;
+  width: 100vw;
+  z-index: 1000;
+  background-color: #333;
+}
+
+.cha {
+  display: flex;
+  height: 60px;
+  line-height: 60px;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  margin-left: 45%;
+}
+
+li {
+  list-style-type: none;
+  padding-right: 90px;
+}
+
+.h2 {
+  color: white;
+}
+
+.h2:hover {
+  color: blue;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  z-index: 1;
+  align-items: center;
+  margin-left: -35px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content a {
+  color: black;
+  margin-top: -23px;
+  margin-bottom: -22px;
+  margin-left: 20px;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+}
+
+.dropdown-content a:hover {
+  background-color: #666363;
+  margin-bottom: -23px;
+  border-radius: 20px;
+  padding-left: 10px;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* 🔽 Search results dropdown */
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 35%;
+  width: 300px;
+  background: #fff;
+  border: 1px solid #ccc;
+  z-index: 10;
+  max-height: 300px;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid #eee;
+}
+
+.search-result-item:hover {
+  background-color: #f2f2f2;
+}
+
+.search-thumb {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 6px;
+}
+
+.search-details h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.search-details p {
+  margin: 0;
+  font-size: 12px;
+  color: #888;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  ul {
+    margin-left: 20%;
+  }
+
+  li {
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-bar-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .search-container {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .search-input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .icons-container {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  .nav {
+    top: 140px;
+  }
+
+  .cha {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  ul {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    gap: 10px;
+  }
+
+  li {
+    padding-right: 0;
+  }
+
+  .search-results {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-input {
+    max-width: 100%;
+  }
+
+  .icons-container {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav {
+    top: 160px;
+  }
+}
+
+.bx {
+  font-size: 35px;
+  margin-top: 8px;
+}
+
+/* PRODUCT dropdown */
+.product-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.product-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  height: 100px;
+}
+
+.product-dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: -8px;
+}
+
+.product-dropdown:hover .product-dropdown-content {
+  display: block;
+}
+
+.product-dropdown-content a:hover {
+  background-color: gray;
+  height: 40px;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.product-title {
+  color: white;
+  cursor: pointer;
+}
+
+.product-title:hover {
+  color: blue;
+}
+
+/* 👉 Stylish Fullscreen Popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.popup-card {
+  background: #fff;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 90%;
+  padding: 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: center;
+  animation: popupSlide 0.3s ease-out;
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes popupSlide {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popup-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.popup-card h3 {
+  font-size: 1.8rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.popup-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.popup-description {
+  margin: 10px 0 20px;
+  font-size: 0.95rem;
+  color: #666;
+  text-align: center;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.popup-actions button {
+  background: #7c3aed;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.popup-actions button:hover {
+  background: #5b21b6;
+}
+
+.popup-actions span {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  font-size: 24px;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.popup-close:hover {
+  color: #ff4b4b;
+}
+
+/* cart icon logo and wishlist logo */
+.icons-wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-left: 20px;
+}
+
+/* Common for both icons */
+.icon-link.bubble-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.icon-link.bubble-icon:hover {
+  color: #ff4081; /* pinkish highlight on hover */
+}
+
+/* Circle behind icon for subtle background */
+.icon-circle {
+  background: #f0f0f0;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    inset 0 -3px 6px #d1d1d1;
+  transition: background 0.3s ease;
+}
+
+.icon-link.bubble-icon:hover .icon-circle {
+  background: #ffe6f0; /* soft pink */
+}
+
+/* Different colors for cart and wishlist circle */
+.cart-circle {
+  color: #ff4081;
+}
+
+.wish-circle {
+  color: #ff80ab;
+}
+
+/* SVG icon styling */
+.icon-svg {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-width: 2.5;
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+}
+
+/* Bubble badge style */
+.bubble-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ff4081;
+  color: white;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 12px;
+  line-height: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(255, 64, 129, 0.6);
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+/* Slight scale animation on badge hover */
+.icon-link.bubble-icon:hover .bubble-badge {
+  transform: scale(1.2);
+}
+
+/* Wishlist badge different color */
+.wish-badge {
+  background: #ff80ab;
+  box-shadow: 0 2px 6px rgba(255, 128, 171, 0.6);
+}
+
+/* navbar */
+
+/* 🌈 Feel-Good Gradient Navbar */
+.nav {
+  position: fixed;
+  top: 72px; /* sits just below the top bar */
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(to right, #fbd3e9, #bb377d); /* soft pink-purple */
+  box-shadow: 0 2px 8px rgba(187, 55, 125, 0.25);
+  transition: background 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 📦 Container for navbar content */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 🔗 Navigation list */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+/* 🌟 Individual nav items */
+.nav-item {
+  position: relative;
+}
+
+/* 🎨 Link styles */
+.nav-link {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  outline: none;
+}
+
+/* ▼ Dropdown indicator */
+.dropdown-toggle::after {
+  content: ' ▼';
+  font-size: 0.6rem;
+  margin-left: 6px;
+  color: #fff;
+}
+
+/* 🎁 Dropdown content */
+.dropdown-menu {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.25s ease;
+  min-width: 150px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item.dropdown:hover .dropdown-menu,
+.nav-item.dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* 🔸 Dropdown links */
+.dropdown-item {
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+.dropdown-item:hover {
+  background-color: #ffe0ef;
+}
+
+/* 👤 User icon */
+.user-icon {
+  font-size: 1.4rem;
+  color: #fff;
+  padding: 6px;
+  transition: color 0.3s ease;
+}
+
+.user-icon:hover {
+  color: #ffd1e8;
+}
+
+/* login icon */
+.user-icon {
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 6px;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.user-icon:hover {
+  color: #ffd1e8;
+}
+
+.stylish-login-icon:hover {
+  color: #007BFF;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.logo-link {
+  font-family: 'Playfair Display', serif; /* Premium serif font */
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #7a4e9b; /* Plum-purple tone */
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(122, 78, 155, 0.3);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  display: inline-block;
+}
+
+.logo-link:hover {
+  transform: scale(1.05);
+  text-shadow: 2px 2px 6px rgba(122, 78, 155, 0.5);
+}
+
+.logo-highlight {
+  background: linear-gradient(to right, #ff66cc, #cc66ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+
+
+/* search bar style */
+
+/* 🌟 Top fixed nav with gradient */
+.search-bar-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, #ffe6f0, #f0e6ff);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 🌸 Unique search bar */
+.search-container {
+  flex: 1;
+  display: flex;
+  max-width: 500px;
+  margin: 0 24px;
+  background-color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+  padding: 4px 8px;
+}
+
+.search-container:focus-within {
+  box-shadow: 0 0 0 3px rgba(200, 150, 255, 0.3);
+}
+
+.search-container input[type="text"] {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 10px 14px;
+  border-radius: 50px;
+  font-family: "Poppins", sans-serif;
+  background: transparent;
+  color: #5c1a82;
+}
+
+.search-container button {
+  background: linear-gradient(to right, #cc66ff, #ff66cc);
+  border: none;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 14px;
+}
+
+.search-container button:hover {
+  background: linear-gradient(to right, #ff66cc, #cc66ff);
+}
+
+/* 🖼️ Logo style */
+.logo-link {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #7a4e9b;
+  letter-spacing: 0.5px;
+}
+
+.logo-highlight {
+  background: linear-gradient(to right, #ff66cc, #cc66ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 🛒 Icons container (Cart, Wishlist) */
+.icons {
+  display: flex;
+  gap: 16px;
+  font-size: 20px;
+}

@@ -1,0 +1,57 @@
+/* Liked.css */
+.liked-page {
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.liked-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #fff;
+}
+
+.liked-card img {
+  width: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.liked-details {
+  flex-grow: 1;
+}
+
+.liked-details h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #222;
+}
+
+.liked-details p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.remove-like-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.remove-like-btn:hover {
+  background-color: #cc0000;
+}

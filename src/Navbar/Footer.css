@@ -1,0 +1,66 @@
+.footer {
+  background: linear-gradient(to right, #f5e9ff, #f0d7ff);
+  color: #5a2e75;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+  border-top: 2px solid #d1b3ff;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  min-width: 220px;
+}
+
+.footer-section h2,
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #4a1650;
+}
+
+.footer-section p,
+.footer-section li {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #6c4675;
+  transition: color 0.3s ease;
+  margin-left: 1vw;
+}
+
+.footer-section ul li a:hover {
+  color: #9f4fcf;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ddbdfc;
+  margin-top: 30px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.social-media a {
+  color: #6c4675;
+  font-size: 24px;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #b73bf0;
+}
