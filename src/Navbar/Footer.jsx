@@ -18,7 +18,7 @@ export default function Footer() {
         {/* 📑 Quick Links */}
         <div className="footer-section links">
           <h3>Quick Links</h3>
-          <ul>
+          <ul className="quick_links">
             <li>
               <a href="/">Home</a>
             </li>
@@ -32,7 +32,7 @@ export default function Footer() {
               <a href="/Charu">All Perfumes</a>
             </li>
             <li>
-              {/* <a href="/Cart">Cart</a> */}
+              <a href="/Cart">Cart</a>
             </li>
           </ul>
         </div>
@@ -40,7 +40,7 @@ export default function Footer() {
         {/* 🧾 Support */}
         <div className="footer-section support">
           <h3>Support</h3>
-          <ul>
+          <ul className="support">
             <li>
               <a href="#">FAQs</a>
             </li>
@@ -48,10 +48,10 @@ export default function Footer() {
               <a href="#">Shipping & Delivery</a>
             </li>
             <li>
-              {/* <a href="#">Returns</a> */}
+              <a href="#">Returns</a>
             </li>
             <li>
-              {/* <a href="#">Privacy Policy</a> */}
+              <a href="#">Privacy Policy</a>
             </li>
             <li>
               <a href="#">Terms of Service</a>

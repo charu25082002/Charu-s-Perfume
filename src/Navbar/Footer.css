@@ -16,6 +16,7 @@
 .footer-section {
   flex: 1 1 200px;
   min-width: 220px;
+ 
 }
 
 .footer-section h2,
@@ -25,15 +26,21 @@
   color: #4a1650;
 }
 
+/* .footer-section p, h3{
+  margin-left: 100px;
+} */
+
 .footer-section p,
 .footer-section li {
   font-size: 14px;
   line-height: 1.6;
+
 }
 
 .footer-section ul {
   list-style: none;
   padding: 0;
+  margin-left: -20px;
 }
 
 .footer-section ul li a {
@@ -64,3 +71,17 @@
 .social-media a:hover {
   color: #b73bf0;
 }
+
+/* quick_links */
+
+.quick_links li{
+  padding-right: 20px;
+}
+
+/* support */
+
+.support li{
+ padding-right: 20px;
+}
+
+/* footer-section contact */

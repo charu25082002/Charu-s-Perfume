@@ -29,7 +29,7 @@ export default function Contact() {
   return (
     <div className="contact-page">
       <div className="contact-card">
-        <h2>Contact Velvet Aromas</h2>
+        <h2>Contact </h2>
         <form ref={form} onSubmit={sendEmail} className="contact-form">
           <label>Name</label>
           <input

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Cart.css";
+import axios from "axios";
 
 export default function Cart({ cart, setCart }) {
   // Handle quantity increment/decrement
@@ -23,6 +24,44 @@ export default function Cart({ cart, setCart }) {
     (sum, item) => sum + (item.price || 0) * (item.quantity || 1),
     0
   );
+
+  const handlePlaceOrder = async () => {
+    try {
+      // Get token from localStorage or context
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        alert("❌ You must be logged in to place order.");
+        return;
+      }
+
+      for (const item of cart) {
+        const { id, name, price, image, quantity } = item;
+
+        await axios.post(
+          "http://localhost:5000/cart/add",
+          {
+            productId: id,
+            name,
+            price,
+            image,
+            quantity,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+      }
+
+      alert("✅ Order placed & saved to DB!");
+      setCart([]);
+    } catch (err) {
+      console.error("❌ Error saving cart to DB:", err);
+      alert("❌ Failed to save cart to DB");
+    }
+  };
 
   return (
     <div className="cart-container">
@@ -65,10 +104,7 @@ export default function Cart({ cart, setCart }) {
           <h3>Grand Total: ₹{total}</h3>
           <div style={{ textAlign: "right", marginTop: "20px" }}>
             <button
-              onClick={() => {
-                alert("✅ Order placed successfully!");
-                setCart([]);
-              }}
+              onClick={handlePlaceOrder}
               style={{
                 padding: "12px 24px",
                 fontSize: "16px",
@@ -87,4 +123,3 @@ export default function Cart({ cart, setCart }) {
     </div>
   );
 }
-

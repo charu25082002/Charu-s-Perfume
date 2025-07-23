@@ -10,31 +10,30 @@ export default function LoginSignupLogout() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [showResetForm, setShowResetForm] = useState(false);
-  const [newPassword, setNewPassword] = useState("");
+  const [resetEmail, setResetEmail] = useState("");
 
-  const API_URL = "https://67ece6494387d9117bbb6411.mockapi.io/products";
+  const API_URL = "https://perfume-backend-ez8z.onrender.com/api/auth";
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
     if (storedUser) {
-      setLoggedInUser(storedUser.username);
+      setLoggedInUser(storedUser.name);
     }
   }, []);
 
+  // Signup handler
   const handleSignup = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
-
     try {
-      await axios.post(API_URL, {
-        username,
+      await axios.post(`${API_URL}/register`, {
+        name: username,
         email,
         password,
       });
-
       alert("Signup successful! Please login.");
       setIsSignup(false);
       setUsername("");
@@ -42,35 +41,31 @@ export default function LoginSignupLogout() {
       setPassword("");
       setConfirmPassword("");
     } catch (error) {
-      console.error("Signup error:", error);
-      alert("Error signing up. Try again.");
+      alert(error.response?.data?.message || "Error signing up. Try again.");
     }
   };
 
+  // Login handler
   const handleLogin = async (e) => {
     e.preventDefault();
     if (loggedInUser) {
       alert("Already logged in. Please logout first.");
       return;
     }
-
     try {
-      const res = await axios.get(`${API_URL}?email=${email}`);
-      const user = res.data.find((u) => u.password === password);
-
-      if (user) {
-        setLoggedInUser(user.username);
-        localStorage.setItem("user", JSON.stringify(user));
-        alert("Login successful!");
-      } else {
-        alert("Invalid credentials");
-      }
+      const res = await axios.post(`${API_URL}/login`, { email, password });
+      const user = res.data;
+      setLoggedInUser(user.name);
+      localStorage.setItem("user", JSON.stringify(user));
+      alert("Login successful!");
+      setEmail("");
+      setPassword("");
     } catch (error) {
-      console.error("Login error:", error);
-      alert("Error logging in. Try again.");
+      alert(error.response?.data?.message || "Invalid credentials");
     }
   };
 
+  // Logout handler
   const handleLogout = () => {
     setLoggedInUser(null);
     localStorage.removeItem("user");
@@ -79,30 +74,16 @@ export default function LoginSignupLogout() {
     alert("Logged out successfully.");
   };
 
-  const handlePasswordReset = async (e) => {
+  // Forgot password handler
+  const handleForgotPassword = async (e) => {
     e.preventDefault();
-
     try {
-      const res = await axios.get(`${API_URL}?email=${email}`);
-      const user = res.data[0];
-
-      if (!user) {
-        alert("Email not found.");
-        return;
-      }
-
-      await axios.put(`${API_URL}/${user.id}`, {
-        ...user,
-        password: newPassword,
-      });
-
-      alert("Password reset successful. Please login.");
+      await axios.post(`${API_URL}/forgot-password`, { email: resetEmail });
+      alert("Password reset email sent. Please check your inbox.");
       setShowResetForm(false);
-      setNewPassword("");
-      setEmail("");
+      setResetEmail("");
     } catch (error) {
-      console.error("Reset error:", error);
-      alert("Failed to reset password.");
+      alert(error.response?.data?.message || "Failed to send reset email.");
     }
   };
 
@@ -116,30 +97,24 @@ export default function LoginSignupLogout() {
           </button>
         </div>
       ) : showResetForm ? (
-        <form className="form-card" onSubmit={handlePasswordReset}>
-          <h2>Reset Password</h2>
+        <form className="form-card" onSubmit={handleForgotPassword}>
+          <h2>Forgot Password</h2>
           <input
             type="email"
             placeholder="Enter your registered email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Enter new password"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
+            value={resetEmail}
+            onChange={(e) => setResetEmail(e.target.value)}
             required
           />
           <button type="submit" className="btn">
-            Reset Password
+            Send Reset Link
           </button>
           <p>
             Back to{" "}
             <span
               className="toggle-link"
               onClick={() => setShowResetForm(false)}
+              style={{ cursor: "pointer", color: "blue" }}
             >
               Login
             </span>
@@ -196,6 +171,7 @@ export default function LoginSignupLogout() {
             <p
               className="forgot-password"
               onClick={() => setShowResetForm(true)}
+              style={{ cursor: "pointer", color: "blue" }}
             >
               Forgot Password?
             </p>
@@ -206,6 +182,7 @@ export default function LoginSignupLogout() {
             <span
               className="toggle-link"
               onClick={() => setIsSignup(!isSignup)}
+              style={{ cursor: "pointer", color: "blue" }}
             >
               {isSignup ? "Login here" : "Signup here"}
             </span>

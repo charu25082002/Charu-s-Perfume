@@ -53,6 +53,16 @@ const perfumeCategories = [
         name: "Green Tea Zest",
         image: "https://i.ebayimg.com/images/g/uSAAAOSweaFhrlNF/s-l1200.webp",
       },
+      {
+        name: "Green Tea Zest",
+        image:
+          "https://images-static.nykaa.com/media/catalog/product/f/1/f1a0a7cWILDS00000143a_3.jpg?tr=w-500",
+      },
+      {
+        name: "Green Tea Zest",
+        image:
+          "https://img.tatacliq.com/images/i8/437Wx649H/MP000000014570689_437Wx649H_202209211612348.jpeg",
+      },
     ],
   },
   {
@@ -209,8 +219,7 @@ const perfumeSliderItems = [
       "https://brands4less.pk/wp-content/uploads/2024/06/GIORGIO-ARMANI-Acqua-Di-Gio-Profondo-4.2-oz-EDP-Spray-Men-6.jpg",
   },
   {
-    image:
-      "https://www.jananfragrances.com/cdn/shop/files/Desktop_Banner_0d4fe6e8-40bf-4d5a-9b64-f99611387592.png?v=1746533019&width=1920",
+    image: "https://pbs.twimg.com/media/EEWVbPBXkAA3HuL.jpg",
   },
   {
     image: "https://i.ebayimg.com/thumbs/images/g/ldMAAOSw4KVlw8Ih/s-l1200.jpg",
@@ -223,8 +232,6 @@ const perfumeSliderItems = [
     image:
       "https://www.jananfragrances.com/cdn/shop/files/Desktop_Banner_0d4fe6e8-40bf-4d5a-9b64-f99611387592.png?v=1746533019&width=1920",
   },
- 
-  
 ];
 
 export default function Home() {
