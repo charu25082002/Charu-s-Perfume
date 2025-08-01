@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import emailjs from "emailjs-com";
 import "./Contact.css";
+import { toast } from "react-toastify";
 
 export default function Contact() {
   const form = useRef();
@@ -17,11 +18,13 @@ export default function Contact() {
       )
       .then(
         () => {
-          alert("Message sent successfully!");
+          // alert("Message sent successfully!");
+          toast.success("Message sent successfully!");
           form.current.reset();
         },
         () => {
-          alert("Failed to send message. Try again.");
+          // alert("Failed to send message. Try again.");
+          toast.success("Failed to send message. Try again.");
         }
       );
   };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Login.css";
+import { toast } from "react-toastify";
 
 export default function LoginSignupLogout() {
   const [isSignup, setIsSignup] = useState(false);
@@ -12,7 +13,7 @@ export default function LoginSignupLogout() {
   const [showResetForm, setShowResetForm] = useState(false);
   const [resetEmail, setResetEmail] = useState("");
 
-  const API_URL = "https://perfume-backend-ez8z.onrender.com/api/auth";
+  const API_URL = "http://localhost:5000/api/auth";
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -34,7 +35,8 @@ export default function LoginSignupLogout() {
         email,
         password,
       });
-      alert("Signup successful! Please login.");
+      // alert("Signup successful! Please login.");
+      toast.success("Signup successful! Please login.");
       setIsSignup(false);
       setUsername("");
       setEmail("");
@@ -49,7 +51,8 @@ export default function LoginSignupLogout() {
   const handleLogin = async (e) => {
     e.preventDefault();
     if (loggedInUser) {
-      alert("Already logged in. Please logout first.");
+      // alert("Already logged in. Please logout first.");
+      toast.success("Already logged in. Please logout first.")
       return;
     }
     try {
@@ -57,7 +60,8 @@ export default function LoginSignupLogout() {
       const user = res.data;
       setLoggedInUser(user.name);
       localStorage.setItem("user", JSON.stringify(user));
-      alert("Login successful!");
+      // alert("Login successful!");
+      toast.success("Login successful!");
       setEmail("");
       setPassword("");
     } catch (error) {
@@ -71,7 +75,8 @@ export default function LoginSignupLogout() {
     localStorage.removeItem("user");
     setEmail("");
     setPassword("");
-    alert("Logged out successfully.");
+    // alert("Logged out successfully.");
+    toast.success("Logged out successfully.");
   };
 
   // Forgot password handler
